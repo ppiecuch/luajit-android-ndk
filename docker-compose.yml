@@ -1,0 +1,6 @@
+# docker-compose run --rm app /bin/bash
+
+app:
+  build: .
+  volumes:
+    - ../../../luajit-2.1:/tmp/luajit-2.1
