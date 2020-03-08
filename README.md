@@ -19,10 +19,18 @@ Base on https://hub.docker.com/_/openjdk/ , image `openjdk:9-jdk`
 * standalone toolchain for arm (api 17) and arm64 (api 21)
 
 ## Run the environment
-Run the command to open bash session inside the running container:
+Run the command to open *bash* session inside the running container:
 ```docker-compose run --rm app /bin/bash```
 
-Luajit is available in ```/tmp/``` folder:
+_LuaJIT_ is mounted accoring to the _docker_compose.yml_ definition (you can change it to your needs - currently it is mounted in ```/tmp/``` folder):
+```
+app:
+  build: .
+  volumes:
+    - ../../../luajit-2.1:/tmp/luajit-2.1
+```
+
+_LuaJIT_ is available in ```/tmp/``` folder:
 ```
 root@723155b53b93:/tmp# ls -l
 total 8
